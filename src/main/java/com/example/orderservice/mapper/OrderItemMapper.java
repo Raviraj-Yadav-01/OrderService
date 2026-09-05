@@ -1,0 +1,22 @@
+package com.example.orderservice.mapper;
+
+import com.example.orderservice.dto.OrderItemDTO;
+import com.example.orderservice.entity.Order;
+import com.example.orderservice.entity.OrderItem;
+import lombok.*;
+
+
+public class OrderItemMapper {
+
+    public static OrderItem orderItemRequestDTOtoOrderItemEntity(
+            OrderItemDTO itemDTO, Order order,double pricePerUnit, double totalPrice){
+
+        return OrderItem.builder()
+                .productId(itemDTO.getProductId())
+                .quantity(itemDTO.getQuantity())
+                .pricePerUnit(pricePerUnit)
+                .totalPrice(totalPrice)
+                .order(order)
+                .build();
+    }
+}
