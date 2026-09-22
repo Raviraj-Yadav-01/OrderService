@@ -8,8 +8,7 @@ import lombok.*;
 
 public class OrderItemMapper {
 
-    public static OrderItem orderItemRequestDTOtoOrderItemEntity(
-            OrderItemDTO itemDTO, Order order,double pricePerUnit, double totalPrice){
+    public static OrderItem orderItemRequestDTOtoOrderItemEntity(OrderItemDTO itemDTO, Order order,double pricePerUnit, double totalPrice){
 
         return OrderItem.builder()
                 .productId(itemDTO.getProductId())

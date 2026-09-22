@@ -14,7 +14,7 @@ import java.util.List;
 @Builder
 
 @Entity
-@Table(name="order")
+@Table(name="orders")
 public class Order extends BaseEntity {
 
     private Long userId;
