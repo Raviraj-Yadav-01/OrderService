@@ -12,7 +12,6 @@ import java.time.Instant;
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
-// This class is design to be a base or parent class of another class
 public abstract class BaseEntity {
 
     @Id

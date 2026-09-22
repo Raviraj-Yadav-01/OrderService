@@ -1,11 +1,19 @@
 package com.example.orderservice.entity;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import lombok.Builder;
+import jakarta.persistence.Table;
+import lombok.*;
 
+@Entity
+@Table(name="orderItems")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class OrderItem {
+public class OrderItem extends BaseEntity {
 
 
     private Long productId;

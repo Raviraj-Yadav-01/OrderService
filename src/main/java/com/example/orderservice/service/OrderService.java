@@ -1,6 +1,5 @@
 package com.example.orderservice.service;
 
-
 import com.example.orderservice.client.ProductServiceClient;
 import com.example.orderservice.dto.CreateOrderResponseDTO;
 import com.example.orderservice.dto.OrderItemDTO;
@@ -19,7 +18,6 @@ import java.util.*;
 @Service
 public class OrderService implements IOrderService {
 
-
     private final OrderRepository orderRepository;
     private final ProductServiceClient productServiceClient;
 
@@ -30,13 +28,12 @@ public class OrderService implements IOrderService {
 
 
     @Override
-    public CreateOrderResponseDTO createOrder(OrderRequestDTO request) {
-       Order order = OrderMapper.toEntity(request);
+    public CreateOrderResponseDTO createOrder(OrderRequestDTO requestDto) {
+       Order order = OrderMapper.toEntity(requestDto);
 
        List<OrderItem> items = new ArrayList<>();
 
-
-       for(OrderItemDTO itemDTO : request.getItems()){
+       for(OrderItemDTO itemDTO : requestDto.getItems()){
 
            ProductDTO product = productServiceClient.getProductById(itemDTO.getProductId());
            double pricePerUnit = product.getPrice();
@@ -55,7 +52,5 @@ public class OrderService implements IOrderService {
          return OrderMapper.toCreateOrderResponseDTO(createdOrder);
 
     }
-
-
 }
 
