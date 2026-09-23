@@ -21,7 +21,8 @@ public class OrderService implements IOrderService {
     private final OrderRepository orderRepository;
     private final ProductServiceClient productServiceClient;
 
-    public OrderService(OrderRepository orderRepository, ProductServiceClient productServiceClient){
+    public OrderService(OrderRepository orderRepository,
+                        ProductServiceClient productServiceClient){
         this.orderRepository = orderRepository;
         this.productServiceClient = productServiceClient;
     }
